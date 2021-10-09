@@ -1,0 +1,19 @@
+<html>
+    <head>
+        
+    </head>
+    <body>
+        <input type="text" id="txt1">
+        <input type="button" value="Write Data" onclick="writeData()" />
+        <input type="button" value="Read Data" onclick="readData()" />
+        <script>
+            function writeData() {
+                var data=document.getElementById("txt1").value;
+                sessionStorage.setItem("username",data);
+            }
+            function readData() {
+                alert(sessionStorage.getItem("username"));
+            }
+        </script>
+    </body>
+</html>

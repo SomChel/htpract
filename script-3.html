@@ -1,0 +1,48 @@
+<html>
+    <body>
+        <form>
+            <input type="checkbox" id="chkPassFail" onclick="showStatus()" />
+            <span id="spanResult">PASS/FAIL</span>
+            <br/><br/>
+            <input type="radio" name="accounts" />Savings A/c
+            <input type="radio" name="accounts" />Current A/c
+            <input type="radio" name="accounts" />Fixed Deposit A/c<br/>
+            <div id="divResult"></div>
+            <input type="button" value="Show Min. Balance" onclick="showMinBalance()" />
+            <br/><br/>
+
+            <select id="ddlAccountType">
+                <option></option>
+                <option value="sav">Savings A/c</option>
+                <option value="cur">Current A/c</option>
+                <option value="fdr">Fixed Deposit A/c</option>
+            </select>
+        </form>
+
+        <script language="JavaScript">
+            function showStatus() {
+                var chk = document.getElementById("chkPassFail");
+                var result=document.getElementById("spanResult");
+                if (chk.checked==true)
+                    result.innerHTML="<b>PASS</b>";
+                else
+                    result.innerHTML="<i>FAIL</i>";
+            }
+
+            function showMinBalance() {
+                var radio = document.getElementsByName("accounts");
+                var result=document.getElementById("divResult");
+                if (radio.item(0).checked==true)
+                    result.innerHTML="Min. Balance Rs. 1000/- required";
+                else if (radio.item(1).checked==true)
+                    result.innerHTML="Min. Balance Rs. 5000/- required";
+                else if (radio.item(2).checked==true)
+                    result.innerHTML="Min. Balance Rs.10,000/-";
+            }
+
+            function showBalance() {
+                var acctType=document.getElementById("ddlAccountType")
+            }
+        </script>
+    </body>
+</html>

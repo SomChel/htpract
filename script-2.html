@@ -1,0 +1,23 @@
+<html>
+    <body>
+        <form>
+            <input type="text" id="txtnum1" /> <br/><br/>
+            <input type="text" id="txtnum2" onblur="addNumbers()" /> <br/><br/>
+            
+            <div id="divResult"></div>
+        </form>
+
+        <script lang="JavaScript">
+            function addNumbers() {
+                var t1=document.getElementById("txtnum1");
+                var t2=document.getElementById("txtnum2");
+                var d1=document.getElementById("divResult");
+
+                if (isNaN(t1.value) ||  isNaN(t2.value))
+                    alert("Invalid Input");
+                else
+                    d1.innerHTML = parseInt(t1.value) + parseInt(t2.value);
+            }
+        </script>
+    </body>
+</html>
